@@ -128,7 +128,7 @@ console.log("Data Loading Started");
 // Load full BRFSS dataset and aggregate client-side
 // Load full BRFSS dataset and aggregate client-side
 //d3.csv("data/BRFSS_small_25000_data.csv").then(raw => {
-d3.csv("https://cdn.jsdelivr.net/gh/ShahriyarHridoy/D3-js_Interactive-Visualization-with-BRFSS_2024_Dataset@main/data/BRFSS_small_25000_data.csv?v=1").then(raw => {
+d3.csv("https://cdn.jsdelivr.net/gh/ShahriyarHridoy/D3-js_Interactive-Visualization-with-BRFSS_2024_Dataset@main/data/BRFSS_small_25000_data.csv?raw=1").then(raw => {
   console.log("Raw rows loaded:", raw.length);
 
   const records = raw.map(d => {
