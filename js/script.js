@@ -127,7 +127,7 @@ function assignRiskProfile(row) {
 
 // Load full BRFSS dataset and aggregate client-side
 // Load full BRFSS dataset and aggregate client-side
-d3.csv("data/BRFSS_2024_full.csv").then(raw => {
+d3.csv("data/BRFSS_small_100000_data.csv").then(raw => {
   console.log("Raw rows loaded:", raw.length);
 
   const records = raw.map(d => {
