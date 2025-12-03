@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stroke Prevalence by Age and Risk Profile — BRFSS 2024</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- D3.js v7 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Stroke Prevalence by Age and Risk Profile — BRFSS 2024</h1>
+    <p class="subtitle">
+      Derived directly in the browser from the BRFSS_2024_full.csv public-use file.
+    </p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label>
+        Y-axis:
+        <select id="metric-select">
+          <option value="stroke_rate_pct" selected>Stroke prevalence (%)</option>
+          <option value="stroke_cases">Stroke cases (count)</option>
+        </select>
+      </label>
+    </section>
+
+    <section id="chart-container">
+      <!-- SVG injected by D3 -->
+    </section>
+
+    <section class="notes">
+      <p>
+        Source: CDC Behavioral Risk Factor Surveillance System, 2024 public-use data file.[web:21][web:22]
+      </p>
+      <p>
+        Risk profiles combine current smoking, diabetes, prediabetes, obesity, and heart disease indicators (_RFSMOK3, DIABETE4, PREDIAB2, _RFBMI5, CVDCRHD4).[web:33][web:69]
+      </p>
+      <p>
+        Interaction: Hover bars for details; use the dropdown to switch between prevalence and case counts.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-note">
+      Implemented with D3.js v7 for VIS assignment.
+    </p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

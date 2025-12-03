@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: #4b5563;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.controls {
+  margin: 20px 0 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+}
+
+.controls select {
+  padding: 5px 8px;
+}
+
+#chart-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px 10px 30px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* Tooltip */
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(17, 24, 39, 0.95);
+  color: #f9fafb;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Notes and footer */
+
+.notes {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.footer-note {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Axis & text */
+
+.axis path,
+.axis line {
+  stroke: #9ca3af;
+}
+
+.axis text {
+  fill: #374151;
+  font-size: 0.8rem;
+}
+
+.axis-title {
+  font-size: 0.9rem;
+  fill: #111827;
+  font-weight: 600;
+}
+
+/* Legend */
+
+.legend {
+  font-size: 0.8rem;
+}
+
+.legend text {
+  fill: #374151;
+}
+
+/* Bars */
+
+.bar {
+  stroke: #111827;
+  stroke-width: 0.7px;
+  cursor: pointer;
+}
+
+.bar:hover {
+  stroke-width: 1.5px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+}
