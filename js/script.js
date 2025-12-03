@@ -124,7 +124,7 @@ function assignRiskProfile(row) {
   if (count === 2) return "Two Risk Factors";
   return "3+ Risk Factors";
 }
-
+console.log("Data Loading Started");
 // Load full BRFSS dataset and aggregate client-side
 // Load full BRFSS dataset and aggregate client-side
 d3.csv("data/BRFSS_small_100000_data.csv").then(raw => {
