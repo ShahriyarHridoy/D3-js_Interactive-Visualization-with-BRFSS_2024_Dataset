@@ -1,85 +1,343 @@
 * {
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 }
 
 body {
   margin: 0;
   padding: 20px;
-  background-color: #f9fafb;
+
+  /* Updated Theme: Emerald → Teal → Navy */
+  background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #1e3a8a 100%);
+  min-height: 100vh;
   color: #111827;
 }
 
 header {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .subtitle {
   margin: 0;
-  color: #4b5563;
+  font-size: 1rem;
+  opacity: 0.95;
 }
 
 main {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Controls Section */
 .controls {
-  margin: 20px 0 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.control-group {
+  display: flex;
+  gap: 15px;
   align-items: center;
 }
 
-.controls select {
-  padding: 5px 8px;
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #374151;
 }
 
+.controls select {
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  background-color: white;
+}
+
+.controls select:hover {
+  border-color: #0d9488;
+}
+
+.controls select:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+}
+
+.customize-btn {
+  /* Premium Theme Gradient */
+  background: linear-gradient(135deg, #10b981 0%, #0d9488 100%);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+.customize-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+}
+
+/* Risk Customization Panel */
+.risk-panel {
+  background-color: #ffffff;
+  border: 3px solid #0d9488;
+  border-radius: 12px;
+  padding: 0;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 40px rgba(13, 148, 136, 0.2);
+  animation: slideDown 0.3s ease-out;
+  overflow: hidden;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-header {
+  background: linear-gradient(135deg, #10b981 0%, #0d9488 100%);
+  color: white;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.panel-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.panel-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.risk-group {
+  background: linear-gradient(135deg, #ecfdf5 0%, #e0f7f5 100%);
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #ccecea;
+  transition: all 0.3s;
+}
+
+.risk-group:hover {
+  border-color: #99d9d4;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15);
+}
+
+.risk-group h4 {
+  margin: 0 0 15px 0;
+  color: #0d9488;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 6px;
+  background-color: white;
+  border: 2px solid transparent;
+}
+
+.checkbox-label:hover {
+  background-color: #f8fafc;
+  border-color: #0d9488;
+  transform: translateX(5px);
+}
+
+.risk-checkbox {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #0d9488;
+}
+
+.checkbox-label span {
+  font-size: 0.9rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.apply-btn {
+  background: linear-gradient(135deg, #10b981 0%, #0d9488 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+.apply-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);
+}
+
+/* Info Box */
+.selection-info {
+  background: linear-gradient(135deg, #d1fae5 0%, #defcf9 100%);
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #0d9488;
+  font-size: 0.95rem;
+  color: #0d9488;
+}
+
+/* Chart Container */
 #chart-container {
   background-color: #ffffff;
-  border-radius: 8px;
-  padding: 10px 10px 30px;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  min-height: 600px;
 }
 
 /* Tooltip */
-
 .tooltip {
   position: absolute;
   pointer-events: none;
   background: rgba(17, 24, 39, 0.95);
   color: #f9fafb;
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-/* Notes and footer */
-
-.notes {
-  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 8px;
   font-size: 0.85rem;
-  color: #6b7280;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid #0d9488;
 }
 
-.footer-note {
+/* Notes */
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
   margin-top: 20px;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #9ca3af;
 }
 
-/* Axis & text */
+.note-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #0d9488;
+}
 
+.note-card h4 {
+  margin: 0 0 10px 0;
+  color: #0d9488;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Footer */
+.footer-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Axis */
 .axis path,
 .axis line {
   stroke: #9ca3af;
@@ -91,41 +349,57 @@ main {
 }
 
 .axis-title {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   fill: #111827;
-  font-weight: 600;
+  font-weight: 700;
 }
-
-/* Legend */
-
-.legend {
-  font-size: 0.8rem;
-}
-
-.legend text {
-  fill: #374151;
-}
-
-/* Bars */
 
 .bar {
   stroke: #111827;
-  stroke-width: 0.7px;
+  stroke-width: 0.8px;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .bar:hover {
-  stroke-width: 1.5px;
+  stroke-width: 2px;
+  filter: brightness(1.1);
 }
 
 /* Responsive */
-
 @media (max-width: 768px) {
   body {
     padding: 10px;
   }
-
   h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+  }
+  .controls {
+    flex-direction: column;
+  }
+  .control-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .controls select {
+    width: 100%;
+  }
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  .panel-header {
+    padding: 15px;
+  }
+  .panel-content {
+    padding: 15px;
+  }
+  .risk-group {
+    padding: 15px;
   }
 }
