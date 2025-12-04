@@ -1,6 +1,5 @@
 // BRFSS 2024 Stroke Analysis - Interactive Visualization
-// Author: S M Shahriyar (12533559)
-// Last modified: December 2024
+// Developed by: S M Shahriyar (12533559)
 
 console.log("Loading visualization script...");
 
